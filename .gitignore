@@ -1,0 +1,5 @@
+# Project exclude paths
+/Cours 2/src/App.jsx
+/Cours 2/src/zooAbstract.js
+/zooAbstract/src/counter.js
+/zooAbstract/src/main.js

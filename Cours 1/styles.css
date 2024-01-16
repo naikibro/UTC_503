@@ -1,0 +1,70 @@
+body{
+    background-color: rgb(130, 236, 255);
+}
+
+.horizontal{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.vertical{
+    display: flex;
+    flex-direction: column;
+}
+
+.hanoiBox{
+    margin: auto;
+    width: 600px;
+    height: 300px;
+    background-color: rgb(78, 78, 78);
+    color: white;
+    justify-content: space-around;
+    padding-bottom: 20px;
+
+}
+
+.pile{
+    width: 150px;
+    height: 100%;
+    margin: auto;
+    text-align: center;
+    justify-content: end;
+    align-items: center;
+    padding: 5px;
+    background-color: cornsilk;
+}
+
+.disk{
+    margin: 5px;
+    width: 10px;
+    height: 25px;
+}
+
+.n1{
+    background-color: blue;
+    width: 30px;
+}
+
+.n2{
+    background-color: blueviolet;
+    width: 60px;
+
+}
+
+.n3{
+    background-color: brown;
+    width: 90px;
+
+}
+
+.n4{
+    background-color: burlywood;
+    width: 120px;
+
+}
+
+.n5{
+    background-color: chartreuse;
+    width: 150px;
+}

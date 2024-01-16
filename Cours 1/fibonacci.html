@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacci</title>
+</head>
+<body>
+
+<h1>Fibonnaci</h1>
+<p id="result"></p>
+<script>
+    function fibonacciRecursive(n) {
+        if (n <= 1) {
+            return n;
+        } else {
+            return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+        }
+    }
+
+    function displayFibonacciSequenceRecursive(n) {
+        console.log(`Les ${n} premiers termes de la suite de Fibonacci sont :`);
+
+        let title = document.createElement('h2');
+        title.innerText = `Les ${n} premiers termes de la suite de Fibonacci sont :`;
+        document.body.appendChild(title);
+
+        for (let i = 0; i < n; i++) {
+            console.log(fibonacciRecursive(i));
+            let result = document.createElement('p');
+            result.innerText = fibonacciRecursive(i);
+
+            document.body.appendChild(result);
+        }
+    }
+
+    // Spécifiez le nombre de termes de la suite désiré
+    const n = 30;
+    displayFibonacciSequenceRecursive(n);
+
+</script>
+
+</body>
+</html>

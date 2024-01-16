@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Hanoi towers</title>
+    <link rel='stylesheet' href='styles.css' />
+</head>
+
+<body class="hanoi-background">
+
+<h1>Hanoi towers</h1>
+<script>
+    let tours = [0, 0, 0];
+    let mouvementsA = [];
+
+    function deplacePlateaux(nbre, depart, arrivee, autre, i = 0, j = 0) {
+        if (nbre !== 0) {
+            deplacePlateaux(nbre - 1, depart, autre, arrivee, i + 1);
+
+            mouvementsA[i] = [depart, arrivee];
+
+            tours[arrivee] += 1;
+            tours[depart] -= 1;
+
+            console.log(`Déplacement de ${depart} vers ${arrivee}`);
+            let hanoiBox = document.createElement('div');
+            hanoiBox.className = 'hanoiBox horizontal';
+
+            for (let k = 0; k < 3; k++) {
+                let pile = document.createElement('div');
+                pile.className = `pile pile${k + 1} vertical`;
+
+                for (let l = 0; l < tours[k]; l++) {
+                    let disk = document.createElement('div');
+                    disk.className = `disk n${l + 1}`;
+                    pile.appendChild(disk);
+                }
+
+                hanoiBox.appendChild(pile);
+            }
+
+            document.body.appendChild(hanoiBox);
+            document.body.appendChild(document.createElement('br'));
+            document.body.appendChild(document.createElement('br'));
+
+            deplacePlateaux(nbre - 1, autre, arrivee, depart, j + 1);
+        }
+    }
+
+    const nbDisques = 5;
+    const pileDeDepart = 0;
+    const pileArrivee = 2;
+    const pileAutre = 1;
+
+    tours[pileDeDepart] = nbDisques;
+
+    deplacePlateaux(2, pileDeDepart, pileArrivee, pileAutre);
+</script>
+
+</body>
+
+</html>
